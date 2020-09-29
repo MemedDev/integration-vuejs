@@ -1,24 +1,20 @@
-# integration
+# Integration - Exemplo em Vue
 
-## Project setup
+Para rodar este exemplo é necessário gerar o Token para o médico seguindo as orientações seguindo o exemplo do link: https://ajuda.memed.com.br/pt-BR/articles/2519457-cadastrar-um-usuario-medico
+
+Alterar o token no arquivo src/components/Integration.vue linha 18  `token:''`
+
+## Instale as dependências
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compile em modo de desenvolvimento
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compile em modo de produção
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

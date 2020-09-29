@@ -1,21 +1,21 @@
-/* eslint-disable no-undef */
 <template>
   <div>
     <span>Memed container</span>
     <button id="botaoShowPrescricao" style="margin-left: 10px">
       Gerar prescricao
     </button>
-    <div class="memed-container" id="memed-cont"></div>
+    <div class="memed-container" id="memed-container"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Integration",
   props: {},
   data: () => {
     return {
       body: document.querySelector("body"),
+      token:'' // INSIRA TOKEN DO MÉDICO
     };
   },
   methods: {
@@ -25,9 +25,9 @@ export default {
       script.setAttribute("data-color", "#1abc9c");
       script.setAttribute(
         "data-token",
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.WzMyMDMyLCI2MGY4Y2ZkNWQwYTVjNTc0NGJhYjQyODBlODVhZWY4MSIsIjIwMjAtMDktMjUiLCJzaW5hcHNlLnByZXNjcmljYW8iLCJwYXJ0bmVyLjMuMjc0MzQiXQ.2wUcJ3_ckJ-8uzzFyB8Cy-ECeelGWXDu1wBjMdxdlqs"
+        this.token
       );
-      script.setAttribute("data-container", "memed-cont");
+      script.setAttribute("data-container", "memed-container");
       script.src =
         "https://sandbox.memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js";
       script.onload = function (data) {
@@ -72,7 +72,8 @@ export default {
 .memed-container {
   margin: 0 auto;
   border: 2px solid black;
-  width: 1000px;
-  height: 710px;
+  /* Largura mínima 820px */
+  width: 820px;
+  height: 710px; 
 }
 </style>
